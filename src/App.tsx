@@ -15,12 +15,15 @@ function App() {
       description: description,
     },
   ];
+  const addTodo = () => {
+    setTodo(...todo);
+  };
 
   const [todo, setTodo] = useState<Todo[]>(tmp);
   return (
     <div className="text-amber-800">
       <input type="text" />
-      <button>ADD TODO</button>
+      <button onClick={() => addTodo}>ADD TODO</button>
       {todo.map((it) => (
         <div key={it.id.id}>
           <h1>{it.id.id}</h1>
