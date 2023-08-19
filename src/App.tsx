@@ -17,17 +17,13 @@ function App() {
   const [description, setDescription] = useState("");
 
   const addTodo = () => {
-    const newTodo = new Todo(
-      new Id(Date.now()),
-      new Title(title),
-      new Description(description)
-    );
+    const newTodo = Todo.create(title, description);
     setTodos([...todos, newTodo]);
     setTitle("");
     setDescription("");
   };
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => id != todo.id));
+  const deleteTodo = (id: number) => {
+    setTodos(todos.filter((todo) => id != todo.id.value));
   };
   const updateTodo = () => {
     // TODO

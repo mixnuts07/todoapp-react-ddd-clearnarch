@@ -13,4 +13,13 @@ export default class Todo {
   id: Id;
   title: Title;
   description: Description;
+
+  // Factory Method
+  static create(title: string, description: string): Todo {
+    return new Todo(
+      new Id(Date.now()),
+      new Title(title),
+      new Description(description)
+    );
+  }
 }
