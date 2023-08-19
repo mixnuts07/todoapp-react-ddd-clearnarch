@@ -8,30 +8,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // const todos = [
-  //   {
-  //     id: Date.now(),
-  //     title: title,
-  //     description: description,
-  //   },
-  // ];
-  // const id = new Id(1);
-  // const title = new Title("TITLE");
-  // const description = new Description("DESCRITPION");
-  // const tmp: Todo[] = [
-  //   {
-  //     id: id,
-  //     title: title,
-  //     description: description,
-  //   },
-  // ];
-  // const sample: Todo[] = [
-  //   {
-  //     id: new Id(2),
-  //     title: title,
-  //     description: description,
-  //   },
-  // ];
+
   const addTodo = () => {
     const newTodo = {
       id: Date.now(),
@@ -42,10 +19,12 @@ function App() {
     setTitle("");
     setDescription("");
   };
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => id != todo.id));
+  };
 
-  // const [todo, setTodo] = useState<Todo[]>(tmp);
   return (
-    <div className="text-amber-800">
+    <div className="text-5xl font-extrabold text-transparent bg-gradient-to-t from-pink-500 to-violet-500">
       <div className="">
         <input
           type="text"
@@ -62,10 +41,11 @@ function App() {
         <button onClick={() => addTodo()}>ADD TODO</button>
       </div>
       {todos.map((it) => (
-        <div key={it.id}>
-          <h1>{it.id}</h1>
-          <h1>{it.title}</h1>
-          <h1>{it.description}</h1>
+        <div key={it.id} className="">
+          <h1>TIMESTAMP: {it.id}</h1>
+          <h1>TITLE: {it.title}</h1>
+          <h1>DESCRIPTION: {it.description}</h1>
+          <button onClick={() => deleteTodo(it.id)}>DELETE TODO</button>
         </div>
       ))}
     </div>
