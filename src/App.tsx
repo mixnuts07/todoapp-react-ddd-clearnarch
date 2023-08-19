@@ -5,16 +5,23 @@ import Title from "../domains/Title";
 import Description from "../domains/Description";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const sampleTodo: Todo[] = [
+    {
+      id: new Id(Date.now()),
+      title: new Title("Sample Title"),
+      description: new Description("Sample Description"),
+    },
+  ];
+  const [todos, setTodos] = useState<Todo[]>(sampleTodo);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
   const addTodo = () => {
-    const newTodo = {
-      id: Date.now(),
-      title: title,
-      description: description,
-    };
+    const newTodo = new Todo(
+      new Id(Date.now()),
+      new Title(title),
+      new Description(description)
+    );
     setTodos([...todos, newTodo]);
     setTitle("");
     setDescription("");
@@ -44,15 +51,24 @@ function App() {
         />
         <button onClick={() => addTodo()}>ADD TODO</button>
       </div>
-      {todos.map((it) => (
-        <div key={it.id} className="">
-          <h1>TIMESTAMP: {it.id}</h1>
-          <h1>TITLE: {it.title}</h1>
-          <h1>DESCRIPTION: {it.description}</h1>
-          <button onClick={() => deleteTodo(it.id)}>DELETE TODO</button>
-          <button onClick={() => updateTodo(it.id)}>UPDATE TODO</button>
-        </div>
-      ))}
+      <ul>
+        {todos.map((it) => (
+          <li key={it.id.value}>
+            <strong>TIMESTAMP:</strong>
+            {it.id.value}
+            <br />
+            <strong>TITLE:</strong>
+            {it.title.value}
+            <br />
+            <strong>DESCRIPTION:</strong>
+            {it.description.value}
+            <br />
+            <button onClick={() => deleteTodo(it.id.value)}>DELETE TODO</button>
+            <br />
+            <button onClick={() => updateTodo(it.id.value)}>UPDATE TODO</button>
+          </li>
+        ))}
+      </ul>
       <h1>REDUX TODO</h1>
       <h1>NEST.JS TODO</h1>
       <h1>KOTLIN TODO</h1>

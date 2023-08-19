@@ -1,6 +1,8 @@
 export default class Description {
-  constructor(description: string) {
-    this.description = description;
+  constructor(value: string) {
+    if (value.length > 256)
+      throw new Error("DESCRIPTION LENGTH IS UNDER 256 CHARACTERS.");
+    this.value = value;
   }
-  description: string;
+  value: string;
 }

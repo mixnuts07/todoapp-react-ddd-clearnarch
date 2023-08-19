@@ -1,6 +1,7 @@
 export default class Id {
-  constructor(id: number) {
-    this.id = id;
+  constructor(value: number) {
+    if (!value) throw new Error("ID IS REQUIRED");
+    this.value = value;
   }
-  id: number;
+  value: number;
 }
