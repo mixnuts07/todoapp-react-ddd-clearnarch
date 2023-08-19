@@ -61,7 +61,7 @@ function App() {
             <br />
             <button onClick={() => deleteTodo(it.id.value)}>DELETE TODO</button>
             <br />
-            <button onClick={() => updateTodo(it.id.value)}>UPDATE TODO</button>
+            <button onClick={() => updateTodo()}>UPDATE TODO</button>
           </li>
         ))}
       </ul>
