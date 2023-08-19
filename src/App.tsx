@@ -22,10 +22,14 @@ function App() {
   const deleteTodo = (id) => {
     setTodos(todos.filter((todo) => id != todo.id));
   };
+  const updateTodo = () => {
+    // TODO
+  };
 
   return (
     <div className="text-5xl font-extrabold text-transparent bg-gradient-to-t from-pink-500 to-violet-500">
       <div className="">
+        <h1>REACT TODO</h1>
         <input
           type="text"
           placeholder="input your title"
@@ -46,8 +50,13 @@ function App() {
           <h1>TITLE: {it.title}</h1>
           <h1>DESCRIPTION: {it.description}</h1>
           <button onClick={() => deleteTodo(it.id)}>DELETE TODO</button>
+          <button onClick={() => updateTodo(it.id)}>UPDATE TODO</button>
         </div>
       ))}
+      <h1>REDUX TODO</h1>
+      <h1>NEST.JS TODO</h1>
+      <h1>KOTLIN TODO</h1>
+      <h1>RUST TODO</h1>
     </div>
   );
 }
