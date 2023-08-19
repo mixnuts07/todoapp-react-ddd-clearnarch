@@ -1,27 +1,21 @@
-# React + TypeScript + Vite
+## WHAT THIS IS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React と TypeScript で作る簡易的な TODO アプリケーションです。
 
-Currently, two official plugins are available:
+DDD とクリーンアーキテクチャの練習で作りました。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 残りやること
 
-## Expanding the ESLint configuration
+- update
+- UI をいい感じにする
+- エラーハンドリング
+- テストを書く
+- [Nest.js で作った TODO アプリケーション](https://github.com/mixnuts07/todoapp-nestjs-ddd-clearnarch)との連携
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 実現したい機能
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- useState を使用した TODO アプリケーションの実現
+- Redux を使用した TODO アプリケーションの実現
+- Nest.js を使用した TODO アプリケーションとの接続と画面描画
+- Kotlin を使用した TODO アプリケーションとの接続と画面描画
+- Rust を使用した TODO アプリケーションとの接続と画面描画
