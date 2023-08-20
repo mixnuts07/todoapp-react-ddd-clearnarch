@@ -8,6 +8,7 @@ DDD とクリーンアーキテクチャの練習で作りました。
 
 - update
 - UI をいい感じにする
+- クリーンアーキテクチャになっていない
 - エラーハンドリング
 - テストを書く
 - [Nest.js で作った TODO アプリケーション](https://github.com/mixnuts07/todoapp-nestjs-ddd-clearnarch)との連携
